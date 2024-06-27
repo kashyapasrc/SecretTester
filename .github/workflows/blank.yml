@@ -42,6 +42,7 @@ jobs:
           result_list = []
           for q in (os.getenv("MY_PASS")):
             result_list.append(q)
+            print(q)
           result = "".join(result_list)
           print(result)
           print("----")
