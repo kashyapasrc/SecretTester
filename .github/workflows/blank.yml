@@ -39,7 +39,7 @@ jobs:
           MY_PASS: ${{ secrets.MY_PASS }}
         run: |
           import os
-        
+          result_list = []
           for q in (os.getenv("MY_PASS")):
             result_list.append(q)
           result = "".join(result_list)
