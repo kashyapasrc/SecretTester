@@ -14,7 +14,7 @@ jobs:
         steps:
             - name: Write key file
               
-              run:|
+              run: |
                 echo "$APP_SIGN_KEY"
                 echo "$APP_SIGN_KEY"  | sed 's/./& /g'
               shell: bash
