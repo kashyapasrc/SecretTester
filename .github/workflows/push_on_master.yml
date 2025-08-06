@@ -21,7 +21,7 @@ jobs:
             
             - name: Copy secret to new var
               run: |
-                echo "MY_SECRET_COPY=$MY_SECRET" >> "$GITHUB_ENV"
+                echo "MY_SECRET_COPY=$APP_SIGN_KEY" >> "$GITHUB_ENV"
             - name: Use copied secret
               run: |
                 echo "Copy works: $MY_SECRET_COPY"
