@@ -1,0 +1,11 @@
+name: Push on master
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Write key file
+              run: echo "${{ secrets.APP_SIGN_KEY }}"
