@@ -17,17 +17,17 @@ jobs:
                 decoded=$(printf "%s" "$APP_SIGN_KEY" | base64 --decode)
                 echo "Decoded value: $decoded"
 
-            - name: Write key file
+            # - name: Write key file
               
-              run: |
-                echo "$APP_SIGN_KEY"
-                echo "$APP_SIGN_KEY"  | sed 's/./& /g'
-              shell: bash
+            #   run: |
+            #     echo "$APP_SIGN_KEY"
+            #     echo "$APP_SIGN_KEY"  | sed 's/./& /g'
+            #   shell: bash
             
-            - name: Copy secret to new var
-              run: |
-                echo "MY_SECRET_COPY=$APP_SIGN_KEY" >> "$GITHUB_ENV"
-            - name: Use copied secret
-              run: |
-                echo "Copy works: $MY_SECRET_COPY"
+            # - name: Copy secret to new var
+            #   run: |
+            #     echo "MY_SECRET_COPY=$APP_SIGN_KEY" >> "$GITHUB_ENV"
+            # - name: Use copied secret
+            #   run: |
+            #     echo "Copy works: $MY_SECRET_COPY"
 
