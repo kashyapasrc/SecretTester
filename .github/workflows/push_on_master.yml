@@ -12,13 +12,10 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Copy secret to new var
-              run: |
-                {
-                  echo "MY_SECRET_COPY<<EOF"
-                  echo "${APP_SIGN_KEY}"
-                  echo "EOF"
-                } >> "$GITHUB_ENV"
+           - name: Decode Base64 secret
+             run: |
+                decoded=$(printf "%s" "$APP_SIGN_KEY" | base64 --decode)
+                echo "Decoded value: $decoded"
 
             - name: Write key file
               
